@@ -1,8 +1,8 @@
 # Tisk štítků / Label Printing
 
-> Current version: **v0.1.1 TEST**
+> Current version: **v0.1.2 BETA**
 
-Test Cloud App restricted to CTU (`420CARDS_CVUT`) for printing spine/call-number labels from physical items.
+Beta Cloud App prepared for Ex Libris submission and restricted to CTU (`420CARDS_CVUT`) for printing spine/call-number labels from physical items.
 
 Items can be scanned by barcode, loaded from an itemized physical-item set, or taken from physical items selected on the current Alma page.
 

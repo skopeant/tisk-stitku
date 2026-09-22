@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.1.2
+
+- Prepared beta build for Ex Libris submission.
+- Added Beta wording to manifest subtitle and description.
+- Kept the app restricted to Czech Technical University in Prague (`420CARDS_CVUT`).
+- Updated repository license URL for `skopeant/tisk-stitku`.
+- No functional changes compared with 0.1.1.
+
 ## 0.1.1
 
 - Fixed Angular template build error caused by an arrow function in `[checked]`.

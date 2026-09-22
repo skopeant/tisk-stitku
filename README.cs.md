@@ -1,8 +1,8 @@
 # Tisk štítků / Label Printing
 
-> Aktuální verze: **v0.1.1 TEST**
+> Aktuální verze: **v0.1.2 BETA**
 
-Testovací Cloud App pro ČVUT (`420CARDS_CVUT`) pro tisk hřbetních štítků ze signatur fyzických jednotek.
+Beta Cloud App připravená pro odeslání do Ex Libris a omezená na ČVUT (`420CARDS_CVUT`) pro tisk hřbetních štítků ze signatur fyzických jednotek.
 
 ## Režimy výběru
 
