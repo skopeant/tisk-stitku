@@ -1,0 +1,41 @@
+{
+  "Main": {
+    "Title": "Label Printing",
+    "Intro": "Load items by barcode, from an itemized set, or from physical items selected on the current Alma page.",
+    "ScanItems": "Scan items",
+    "Set": "Set",
+    "SelectItems": "Select items",
+    "Barcode": "Barcode",
+    "BarcodeHint": "Scan or enter a barcode and press Enter.",
+    "Add": "Add",
+    "SelectSet": "Select an itemized physical-item set",
+    "LoadSet": "Load set",
+    "ReloadSets": "Reload sets",
+    "NoSets": "No itemized physical-item sets were found.",
+    "SelectedCount": "Selected: {{count}}",
+    "CheckAll": "Check / uncheck all",
+    "NoSelectedEntities": "There are no selected physical items on the current Alma page.",
+    "Next": "Next",
+    "Back": "Back",
+    "Print": "Print",
+    "Preview": "Label preview",
+    "CallNumber": "Call number",
+    "BarcodeCol": "Barcode",
+    "Remove": "Remove",
+    "Loading": "Loading…",
+    "LoadingSet": "Loading set…",
+    "PrintReady": "The print preview is ready.",
+    "NoCallNumber": "No call number",
+    "LabelsCount": "Labels: {{count}}"
+  },
+  "Errors": {
+    "BarcodeRequired": "Enter a barcode.",
+    "BarcodeLoad": "Could not load the item by barcode.",
+    "Duplicate": "This item is already in the list.",
+    "SetRequired": "Select a set.",
+    "SetLoad": "Could not load the set.",
+    "ItemLoad": "Some items could not be loaded.",
+    "NothingSelected": "Select at least one item.",
+    "Popup": "The browser blocked the print window."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "Main": {
+    "Title": "Tisk štítků",
+    "Intro": "Načtěte jednotky čárovým kódem, ze setu nebo z aktuálně vybraných jednotek v Almě.",
+    "ScanItems": "Načíst jednotky",
+    "Set": "Set",
+    "SelectItems": "Vybrané jednotky",
+    "Barcode": "Čárový kód",
+    "BarcodeHint": "Načtěte nebo zadejte čárový kód a stiskněte Enter.",
+    "Add": "Přidat",
+    "SelectSet": "Vyberte itemizovaný set fyzických jednotek",
+    "LoadSet": "Načíst set",
+    "ReloadSets": "Obnovit sety",
+    "NoSets": "Nebyly nalezeny žádné itemizované sety fyzických jednotek.",
+    "SelectedCount": "Vybráno: {{count}}",
+    "CheckAll": "Vybrat / zrušit vše",
+    "NoSelectedEntities": "Na aktuální stránce Almy nejsou vybrané fyzické jednotky.",
+    "Next": "Další",
+    "Back": "Zpět",
+    "Print": "Tisk",
+    "Preview": "Náhled štítků",
+    "CallNumber": "Signatura",
+    "BarcodeCol": "Čárový kód",
+    "Remove": "Odebrat",
+    "Loading": "Načítám…",
+    "LoadingSet": "Načítám set…",
+    "PrintReady": "Tiskový náhled je připraven.",
+    "NoCallNumber": "Bez signatury",
+    "LabelsCount": "Počet štítků: {{count}}"
+  },
+  "Errors": {
+    "BarcodeRequired": "Zadejte čárový kód.",
+    "BarcodeLoad": "Jednotku se nepodařilo načíst podle čárového kódu.",
+    "Duplicate": "Tato jednotka už je v seznamu.",
+    "SetRequired": "Vyberte set.",
+    "SetLoad": "Set se nepodařilo načíst.",
+    "ItemLoad": "Některé jednotky se nepodařilo načíst.",
+    "NothingSelected": "Vyberte alespoň jednu jednotku.",
+    "Popup": "Prohlížeč zablokoval tiskové okno."
+  }
+}

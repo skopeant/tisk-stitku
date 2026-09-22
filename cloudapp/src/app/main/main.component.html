@@ -1,0 +1,178 @@
+<div class="page">
+  <h1>{{ 'Main.Title' | translate }}</h1>
+  <p class="intro">{{ 'Main.Intro' | translate }}</p>
+
+  <ng-container *ngIf="step === 1">
+    <div class="modes">
+      <label>
+        <input
+          type="radio"
+          name="mode"
+          [checked]="mode === 'scan'"
+          (change)="changeMode('scan')">
+        {{ 'Main.ScanItems' | translate }}
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="mode"
+          [checked]="mode === 'set'"
+          (change)="changeMode('set')">
+        {{ 'Main.Set' | translate }}
+      </label>
+
+      <label>
+        <input
+          type="radio"
+          name="mode"
+          [checked]="mode === 'selected'"
+          (change)="changeMode('selected')">
+        {{ 'Main.SelectItems' | translate }}
+      </label>
+    </div>
+
+    <div *ngIf="mode === 'scan'" class="mode-panel">
+      <label class="field">
+        <span>{{ 'Main.Barcode' | translate }}</span>
+        <input
+          type="text"
+          [(ngModel)]="barcode"
+          (keyup.enter)="addBarcode()"
+          [disabled]="loading"
+          autofocus>
+        <small>{{ 'Main.BarcodeHint' | translate }}</small>
+      </label>
+      <button type="button" (click)="addBarcode()" [disabled]="loading">
+        {{ 'Main.Add' | translate }}
+      </button>
+    </div>
+
+    <div *ngIf="mode === 'set'" class="mode-panel">
+      <label class="field grow">
+        <span>{{ 'Main.SelectSet' | translate }}</span>
+        <select [(ngModel)]="selectedSetId" [disabled]="loadingSets || loading">
+          <option value=""></option>
+          <option *ngFor="let set of sets" [value]="set.id">
+            {{ set.name }}
+          </option>
+        </select>
+      </label>
+
+      <button
+        type="button"
+        (click)="loadSelectedSet()"
+        [disabled]="loading || loadingSets || !selectedSetId">
+        {{ 'Main.LoadSet' | translate }}
+      </button>
+
+      <button
+        type="button"
+        (click)="loadSets()"
+        [disabled]="loadingSets || loading">
+        {{ 'Main.ReloadSets' | translate }}
+      </button>
+    </div>
+
+    <div *ngIf="mode === 'selected'" class="mode-panel selected-panel">
+      <ng-container *ngIf="selectedEntities.length; else noEntities">
+        <div class="count">
+          {{ 'Main.SelectedCount' | translate:{ count: entitySelection.size } }}
+        </div>
+
+        <label class="check-all">
+          <input
+            type="checkbox"
+            [checked]="entitySelection.size === selectedEntities.length"
+            (change)="toggleAllEntities()">
+          {{ 'Main.CheckAll' | translate }}
+        </label>
+
+        <label
+          class="entity-row"
+          *ngFor="let entity of selectedEntities; let i = index">
+          <input
+            type="checkbox"
+            [checked]="entityChecked(entity)"
+            (change)="toggleEntity(entity)">
+          <span>{{ i + 1 }}. {{ entity.description }}</span>
+        </label>
+      </ng-container>
+
+      <ng-template #noEntities>
+        <div class="empty">{{ 'Main.NoSelectedEntities' | translate }}</div>
+      </ng-template>
+    </div>
+
+    <div class="status" *ngIf="loading || loadingSets">
+      {{ loadingSets ? ('Main.LoadingSet' | translate) : ('Main.Loading' | translate) }}
+    </div>
+
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+    <div class="success" *ngIf="resultMessage">{{ resultMessage }}</div>
+
+    <div class="items" *ngIf="items.length">
+      <label class="check-all">
+        <input
+          type="checkbox"
+          [checked]="allItemsChecked"
+          (change)="toggleAllItems()">
+        {{ 'Main.CheckAll' | translate }}
+      </label>
+
+      <div class="item-row" *ngFor="let item of items">
+        <input type="checkbox" [(ngModel)]="item.checked">
+
+        <div class="item-main">
+          <div class="barcode">{{ item.barcode }}</div>
+          <div class="call-number">
+            {{ item.callNumber || ('Main.NoCallNumber' | translate) }}
+          </div>
+        </div>
+
+        <button type="button" class="remove" (click)="removeItem(item)">
+          {{ 'Main.Remove' | translate }}
+        </button>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button
+        type="button"
+        class="primary"
+        (click)="next()"
+        [disabled]="loading || loadingSets">
+        {{ 'Main.Next' | translate }} ›
+      </button>
+    </div>
+  </ng-container>
+
+  <ng-container *ngIf="step === 2">
+    <div class="preview-head">
+      <h2>{{ 'Main.Preview' | translate }}</h2>
+      <div>{{ 'Main.LabelsCount' | translate:{ count: checkedItems.length } }}</div>
+    </div>
+
+    <div class="label-preview" *ngFor="let item of checkedItems">
+      <div class="label-lines">
+        <ng-container *ngIf="item.lines.length; else noCallNumber">
+          <div *ngFor="let line of item.lines">{{ line }}</div>
+        </ng-container>
+        <ng-template #noCallNumber>
+          <div>{{ 'Main.NoCallNumber' | translate }}</div>
+        </ng-template>
+      </div>
+      <div class="label-barcode">{{ item.barcode }}</div>
+    </div>
+
+    <div class="error" *ngIf="errorMessage">{{ errorMessage }}</div>
+    <div class="success" *ngIf="resultMessage">{{ resultMessage }}</div>
+
+    <div class="actions split">
+      <button type="button" (click)="back()">‹ {{ 'Main.Back' | translate }}</button>
+      <button type="button" class="primary" (click)="print()">
+        {{ 'Main.Print' | translate }}
+      </button>
+    </div>
+  </ng-container>
+</div>
