@@ -1,20 +1,24 @@
-# Tisk štítků / Label Printing
+# Tisk štítků – Label Printing
 
-> Aktuální verze: **v0.1.2 BETA**
+> Aktuální verze: **v1.0.0**
 
-Beta Cloud App připravená pro odeslání do Ex Libris a omezená na ČVUT (`420CARDS_CVUT`) pro tisk hřbetních štítků ze signatur fyzických jednotek.
+Alma Cloud App pro tisk hřbetních štítků ze signatur fyzických jednotek.
 
-## Režimy výběru
+## Dostupnost
+Tato verze je určena pouze pro **České vysoké učení technické v Praze** (`420CARDS_CVUT`).
 
-- **Načíst jednotky** – načítání čárových kódů po jednom.
-- **Set** – načtení itemizovaného setu typu Physical items.
-- **Vybrané jednotky** – převzetí fyzických jednotek vybraných na aktuální stránce Almy přes `entities$`.
+## Funkce
+- načítání fyzických jednotek podle čárového kódu
+- načítání itemizovaných setů fyzických jednotek
+- převzetí fyzických jednotek vybraných na aktuální stránce Almy
+- načtení signatury fyzické jednotky
+- rozdělení signatury do samostatných řádků štítku
+- tisk jedné fyzické jednotky na jednu stránku prohlížeče
+- české a anglické rozhraní
+- pouze čtení
 
-## Signatura
-
-Aplikace používá aktuální `holding_data.call_number` (Signatura jednotky). Pokud není k dispozici, zkouší permanentní/parsed/alternativní signaturu.
-
-Signatura se pro první test rozděluje po mezerách. Například:
+## Formátování signatury
+Signatura se rozděluje podle mezer. Například:
 
 `QA76 .73 .J38 V57 2020 2`
 
@@ -29,13 +33,20 @@ V57
 2
 ```
 
+Interpunkce, velikost písmen i obsah zůstávají zachovány.
+
 ## Tisk
+Každá vybraná fyzická jednotka se tiskne jako samostatná stránka prohlížeče. Skutečný rozměr štítku, posun média a odřez zajišťuje ovladač tiskárny.
 
-Každá jednotka je samostatná HTML tisková stránka (`break-after: page`). Rozměr stránky není v aplikaci zatím nastaven; používá se formát/médium nastavené v ovladači tiskárny (test se Zebrou).
+Tisk byl ověřen na cílové tiskárně Zebra.
 
-## Omezení testovací verze
+## Bezpečnost
+Aplikace je pouze pro čtení. V Almě nevytváří, neupravuje ani nemaže žádné záznamy.
 
-- určeno jen pro ČVUT,
-- bez nastavování velikosti štítku a řezu v aplikaci,
-- itemizované sety se načítají přes Set Members API; u fyzických jednotek se barcode bere z `member.description`,
-- aplikace je pouze pro čtení.
+## Repozitář
+https://github.com/skopeant/tisk-stitku
+
+## Licence
+MIT License
+
+Copyright (c) 2026 Antonín Skopec

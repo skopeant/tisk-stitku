@@ -13,11 +13,11 @@
    "subtitle": [
       {
          "lang": "en",
-         "text": "Beta – Print spine labels from physical item call numbers"
+         "text": "Print spine labels from physical item call numbers"
       },
       {
          "lang": "cs",
-         "text": "Beta – Tisk hřbetních štítků ze signatur fyzických jednotek"
+         "text": "Tisk hřbetních štítků ze signatur fyzických jednotek"
       }
    ],
    "author": "Antonín Skopec",
@@ -36,11 +36,11 @@
    "description": [
       {
          "lang": "en",
-         "text": "Beta Cloud App for printing spine labels from physical item call numbers. Items can be loaded by barcode, from an itemized physical-item set, or from physical items selected on the current Alma page. Each selected item is printed as a separate browser-print page. Read-only. Currently restricted to Czech Technical University in Prague."
+         "text": "Prints spine labels from physical item call numbers in Ex Libris Alma. Items can be loaded by barcode, from an itemized physical-item set, or from physical items selected on the current Alma page. Each selected item is printed as a separate browser-print page. Read-only. Restricted to Czech Technical University in Prague."
       },
       {
          "lang": "cs",
-         "text": "Beta Cloud App pro tisk hřbetních štítků ze signatur fyzických jednotek. Jednotky lze načíst čárovým kódem, z itemizovaného setu fyzických jednotek nebo přímo z jednotek vybraných na aktuální stránce Almy. Každá vybraná jednotka se tiskne jako samostatná stránka prohlížeče. Aplikace je pouze pro čtení a je zatím určena pouze pro ČVUT."
+         "text": "Tiskne hřbetní štítky ze signatur fyzických jednotek v Ex Libris Alma. Jednotky lze načíst čárovým kódem, z itemizovaného setu fyzických jednotek nebo přímo z jednotek vybraných na aktuální stránce Almy. Každá vybraná jednotka se tiskne jako samostatná stránka prohlížeče. Aplikace je pouze pro čtení a je určena pouze pro ČVUT."
       }
    ],
    "relevantForInst": [

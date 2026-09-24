@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.0
+
+- First stable release.
+- Printing verified on the target Zebra label printer.
+- Removed beta/test wording from manifest and documentation.
+- Kept the app restricted to Czech Technical University in Prague (`420CARDS_CVUT`).
+- Scan items by barcode, load itemized physical-item sets, or use selected physical items from the current Alma page.
+- Print one selected physical item per browser-print page.
+
 ## 0.1.2
 
 - Prepared beta build for Ex Libris submission.

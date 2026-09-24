@@ -1,6 +1,6 @@
 {
   "name": "tisk-stitku",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Ex Libris Alma Cloud App for printing spine/call-number labels from physical items.",
   "license": "MIT",
   "private": true,
